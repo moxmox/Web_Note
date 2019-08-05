@@ -3,6 +3,74 @@ body{
     background: whitesmoke;
 }
 
+
+.fileNameInput{
+    display: grid;
+    position: absolute;
+    background: orange;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.fileNameInputInner{
+    display: grid;
+    background: #77d1f0;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    grid-template-areas:
+    "fileName fileName"
+    "fileNameBox fileNameButton";
+}
+
+.fileName{
+    grid-area: fileName;
+    padding-left: 10px;
+}
+
+.fileNameBox{
+    grid-area: fileNameBox;
+    margin-right: 5px;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.fileNameButton{
+    grid-area: fileNameButton;
+    color: black;
+    background: #79c6ea;
+    padding: 5px;
+    box-shadow: 1px 2px #0c343f;
+    border: 1px grey outset;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fileNameButton:hover{
+    grid-area: fileNameButton;
+    color: black;
+    background: lightcyan;
+    box-shadow: 1px 2px #0c343f;
+    border: 1px grey outset;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fileNameButton:active{
+    grid-area: fileNameButton;
+    color: black;
+    background: grey;
+    box-shadow: 1px 2px #0c343f inset;
+    border: 1px grey outset;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
 .outerWrapper{
     display: grid;
     background: whitesmoke;
@@ -29,7 +97,7 @@ body{
     color: white;
     display: grid;
     background: #77d1f0;
-    padding: 5px;
+    padding: 10px;
     text-align: center;
     border-left: 1px #0c343f solid;
     border-top: 1px #0c343f solid;
@@ -166,6 +234,7 @@ body{
         "header header header"
         "menu menu menu"
         "pad pad pad";
+        margin: 0 auto;
     }
 
     .header{
@@ -173,7 +242,7 @@ body{
         color: white;
         display: grid;
         background: #77d1f0;
-        padding: 5px;
+        padding: 10px;
         text-align: center;
         border-left: 1px #0c343f solid;
         border-top: 1px #0c343f solid;
@@ -194,6 +263,18 @@ body{
         border-radius: 0;
     }
 
+    .footer{
+        grid-area: footer;
+        display: grid;
+        color: black;
+        background: #0c343f;
+        margin: 0 auto;
+        width: 98%;
+        border-radius: 5px;
+        border: 1px coral solid;
+        box-shadow: 0px 2px grey;
+        background-image: linear-gradient(to right, #7999ea, #77d1f0)
+    }
     
 }
 
@@ -203,6 +284,12 @@ body{
 
 textarea:focus,
 textarea:active{
+    outline: 0px !important;
+    --webkit-appearance: none;
+}
+
+input:focus,
+input:active{
     outline: 0px !important;
     --webkit-appearance: none;
 }

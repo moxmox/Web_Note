@@ -7,6 +7,9 @@ $(document).ready(() => {
         aboutBtn: $('.about'),
         downloadBtn: $('.download'),
         notePad: $('.note'),
+        fileNamePopup: $('.fileNameInput'),
+        fileNameBox: $('.fileNameBox'),
+        fileNameButton: $('.fileNameButton'),
         jlink: '',
         downloadAvailable: false,
         textData: '',
@@ -14,9 +17,23 @@ $(document).ready(() => {
         init: () => {
             app.textData = app.notePad.val()
 
+            let x = window.innerWidth / 5
+            let y = window.innerHeight / 3
+
+            app.fileNamePopup.offset({
+                left: x,
+                top: y
+            })
+
+            app.fileNameButton.on('click', () => {
+                app.fileNamePopup.addClass('hidden')
+                app.downloadLink(app.fileNameBox.val())
+                app.fileNameBox.val('')
+            })
+
             app.saveBtn.on('click', () => {
                 if(app.hasUpdates(app.notePad.val()) && !app.downloadAvailable){
-                    app.downloadLink()
+                    app.fileNamePopup.removeClass('hidden')
                 }
             })
         
@@ -33,10 +50,10 @@ $(document).ready(() => {
             })
         },
 
-        downloadLink: () => {
+        downloadLink: (fileName) => {
             app.textData = app.notePad.val()
             app.downloadBtn.attr('href', `data:text/plain;charset=utf-8,${encodeURIComponent(app.textData)}`)
-            app.downloadBtn.attr('download', 'test.txt')
+            app.downloadBtn.attr('download', fileName)
             app.toggleMenuGrid()
         },
 

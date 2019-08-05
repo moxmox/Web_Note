@@ -10,6 +10,7 @@ $(document).ready(() => {
         fileNamePopup: $('.fileNameInput'),
         fileNameBox: $('.fileNameBox'),
         fileNameButton: $('.fileNameButton'),
+        fileNameCancelButton: $('.fileNameCancelButton'),
         jlink: '',
         downloadAvailable: false,
         textData: '',
@@ -29,6 +30,11 @@ $(document).ready(() => {
                 app.fileNamePopup.addClass('hidden')
                 app.downloadLink(app.fileNameBox.val())
                 app.fileNameBox.val('')
+            })
+
+            app.fileNameCancelButton.on('click', () => {
+                app.fileNameBox.val('')
+                app.fileNamePopup.addClass('hidden')
             })
 
             app.saveBtn.on('click', () => {

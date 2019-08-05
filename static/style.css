@@ -7,6 +7,8 @@ body{
 .fileNameInput{
     display: grid;
     position: absolute;
+    border: 1px grey solid;
+    box-shadow: 1px 2px black;
     background: orange;
     border-radius: 10px;
     margin: 5px;
@@ -21,8 +23,8 @@ body{
     border-radius: 10px;
     margin: 10px;
     grid-template-areas:
-    "fileName fileName"
-    "fileNameBox fileNameButton";
+    "fileName fileName fileName"
+    "fileNameBox fileNameButton fileNameCancelButton";
 }
 
 .fileName{
@@ -49,6 +51,19 @@ body{
     text-decoration: none;
 }
 
+.fileNameCancelButton{
+    grid-area: fileNameCancelButton;
+    color: black;
+    background: #79c6ea;
+    padding: 5px;
+    box-shadow: 1px 2px #0c343f;
+    border: 1px grey outset;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 2px;
+}
+
 .fileNameButton:hover{
     grid-area: fileNameButton;
     color: black;
@@ -60,8 +75,30 @@ body{
     text-decoration: none;
 }
 
+.fileNameCancelButton:hover{
+    grid-area: fileNameCancelButton;
+    color: black;
+    background: lightcyan;
+    box-shadow: 1px 2px #0c343f;
+    border: 1px grey outset;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
 .fileNameButton:active{
     grid-area: fileNameButton;
+    color: black;
+    background: grey;
+    box-shadow: 1px 2px #0c343f inset;
+    border: 1px grey outset;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.fileNameCancelButton:active{
+    grid-area: fileNameCancelButton;
     color: black;
     background: grey;
     box-shadow: 1px 2px #0c343f inset;

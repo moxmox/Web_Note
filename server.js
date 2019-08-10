@@ -11,6 +11,10 @@ app.get('/', (req, res) => {
     res.sendFile(`${__dirname}/web_note.html`)
 })
 
+app.get('/about', (req, res) => {
+    res.sendFile(`${__dirname}/static/about.txt`)
+})
+
 app.listen(port, serverIP, () => {
     console.log(`listening on port ${port}`)
 })

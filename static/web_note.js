@@ -49,13 +49,9 @@ $(document).ready(() => {
                 console.log('function completed: openFile')
             })
         
-            app.aboutBtn.on('click', () => {
-                app.notePad.val('about')
-            })
+            app.aboutBtn.on('click', () => app.loadAboutFile())
 
-            app.downloadBtn.on('click', () => {
-                app.downloadLink()
-            })
+            app.downloadBtn.on('click', () => app.downloadLink())
 
             app.invisibleFileInput.on('change', (e) => {
                 if(app.isFileAPISupported()){
@@ -114,7 +110,21 @@ $(document).ready(() => {
 
         openFile: () => {
             app.invisibleFileInput.trigger('click')
-        }   
+        },
+        
+        loadAboutFile: async () => {
+            await $.ajax({
+                url: '/about',
+                method: 'GET',
+                success: (data) => {
+                    app.notePad.val(data)
+                },
+                failure: (xhr) => {
+                    console.log('Error getting about.txt')
+                    app.notePad.val(`Error getting about.txt`)
+                }
+            })
+        }
         
     }
 

@@ -170,6 +170,10 @@ body{
     border-radius: 5px;
 }
 
+.fileInput{
+    display: none;
+}
+
 .save{
     grid-area: save;
 }

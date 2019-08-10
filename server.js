@@ -2,7 +2,7 @@ const express = require('express')
 const fs = require('fs')
 
 const port = 80
-const serverIP = '192.168.0.8'
+const serverIP = '192.168.0.11'
 const app = express()
 
 app.use('/static', express.static('static'))

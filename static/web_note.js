@@ -120,7 +120,7 @@ $(document).ready(() => {
                     app.notePad.val(data)
                 },
                 failure: (xhr) => {
-                    console.log('Error getting about.txt')
+                    console.log('Error getting about.txt', xhr)
                     app.notePad.val(`Error getting about.txt`)
                 }
             })
@@ -129,8 +129,5 @@ $(document).ready(() => {
     }
 
     app.init()
-
-    //global to be removed for final application
-    window.App = app
 
 })
